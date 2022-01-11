@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_trips
+    columns:
+      - name: route_id
+        tests:
+          - unique
+          - not_null
+
