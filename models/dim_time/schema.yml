@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_time
+    description: "Dimension des horaires"
+    columns:
+      - name: arrival_time
+        description: "Cle primaire pour cette table"
+        tests:
+          - unique
+          - not_null
