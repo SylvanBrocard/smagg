@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_trips
+    description: "Dimension des trajets"
+    columns:
+      - name: trip_id
+        description: "Cle primaire pour cette table"
+        tests:
+          - unique
+          - not_null
