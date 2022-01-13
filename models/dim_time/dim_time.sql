@@ -1,3 +1,4 @@
+{{ config(materialized='table') }}
 with source_times as (
 
     select distinct arrival_time
