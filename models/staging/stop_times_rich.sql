@@ -6,7 +6,7 @@ with stop_times as (
 ),
 
 dim_stopgeo as (
-	select stop_id::integer, stop_name, stop_lat, stop_lon
+	select stop_id::integer, stop_name, stop_lat, stop_lon, new_cluster_name, old_cluster_name
 	from {{ref ('dim_stopgeo')}}
 ),
 
@@ -21,7 +21,7 @@ dim_time as (
 ),
 
 stop_times_rich as (
-	select stop_times.trip_id, stop_times.stop_id, stop_name, stop_lat, stop_lon, stop_times.arrival_time, route_id, timelaps, direction_id
+	select stop_times.trip_id, stop_times.stop_id, stop_name, stop_lat, stop_lon, stop_times.arrival_time, route_id, timelaps, direction_id, dim_stopgeo.new_cluster_name, dim_stopgeo.old_cluster_name
 	from stop_times
 		join dim_trips
 			on stop_times.trip_id = dim_trips.trip_id
