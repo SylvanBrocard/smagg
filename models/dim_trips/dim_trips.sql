@@ -1,3 +1,4 @@
+{{ config(materialized='table') }}
 with source_trips as (
 
     select trip_id, route_id, direction_id from {{ ref('trips') }}
