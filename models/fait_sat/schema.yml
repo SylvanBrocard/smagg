@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: fait_sat
+    description: "Table de fait saturation"
+    columns:
+      - name: id_unique
+        description: "Cle primaire pour cette table"
+        tests:
+          - unique
+          - not_null
